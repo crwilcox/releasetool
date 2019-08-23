@@ -101,10 +101,6 @@ def determine_release_version(ctx: Context) -> None:
 
     parsed_version = [int(x) for x in ctx.last_release_version.split(".")]
 
-    if parsed_version == [0, 0, 0]:
-        ctx.release_version = "0.1.0"
-        return
-
     selection = click.prompt(
         "Is this a major, minor, or patch update (or enter the new version " "directly)"
     )
